@@ -28,6 +28,12 @@ function onOpen() {
   spreadsheet.addMenu('Custom functions', menu);
 }
 ```
+- Spreadsheetを編集
+```javascript
+function test() {
+  spreadsheet.getRange('A2').setValue('test');
+}
+```
 
 ### Youtube APIで動画の情報を取得
 ### GUIで使いやすくする
