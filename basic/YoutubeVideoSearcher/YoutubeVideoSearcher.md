@@ -9,6 +9,7 @@
 ## 使ったGASクラス
 - SpreadsheetApp
 - YouTube API
+
 ※UrlFetchAppでも可
 - HtmlService
 
@@ -60,5 +61,6 @@ var results = YouTube.Search.list('snippet', parameters);
 ※ UrlFetchAppを使う場合
 ```javascript
 var results = UrlFetchApp.fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q=test&type=video&key=' + apiKey).getContentText();
+```
 
 ### GUIで使いやすくする
