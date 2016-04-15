@@ -4,7 +4,7 @@
 
 こんな感じ：
 
-![setlist screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/setlist.png)
+![setlist screenshot](/basic/YoutubeVideoSearcher/images/setlist.png)
 
 ## 使ったGASクラス
 - SpreadsheetApp
@@ -34,17 +34,17 @@ function test() {
 ### YouTube APIで動画の情報を取得
 - YouTube APIを有効にする: Google Apps Scriptのリソースを追加
 
-![google extensions screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_extensions.png)
+![google extensions screenshot](/basic/YoutubeVideoSearcher/images/google_extensions.png)
 
 - YouTube APIを有効にする: Google デベロッパー コンソールを設定
 
-![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console.png)
+![google developer console screenshot](/basic/YoutubeVideoSearcher/images/google_developer_console.png)
 
-![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_2.png)
+![google developer console screenshot](/basic/YoutubeVideoSearcher/images/google_developer_console_2.png)
 
-![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_3.png)
+![google developer console screenshot](/basic/YoutubeVideoSearcher/images/google_developer_console_3.png)
 
-![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_4.png)
+![google developer console screenshot](/basic/YoutubeVideoSearcher/images/google_developer_console_4.png)
 
 - YouTube APIで動画検索（https://developers.google.com/youtube/v3/docs/search/list）
 ```javascript
