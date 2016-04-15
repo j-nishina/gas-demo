@@ -34,15 +34,22 @@ function test() {
 
 ### YouTube APIで動画の情報を取得
 - YouTube APIを有効にする
--- Google Apps Scriptのリソースを追加
+    - Google Apps Scriptのリソースを追加
+
 ![google extensions screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_extensions.png)
--- Google デベロッパー コンソールを設定
+    - Google デベロッパー コンソールを設定
+
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console.png)
+
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_2.png)
+
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_3.png)
+
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_4.png)
 - YouTube.Search.listで動画検索
+```javascript
 
+```
 ※ YouTube APIのメソッドを試すには https://developers.google.com/apis-explorer/?hl=ja#p/youtube/v3/
 
 ### GUIで使いやすくする
