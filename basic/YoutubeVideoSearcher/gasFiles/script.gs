@@ -1,16 +1,19 @@
+var spreadsheet = SpreadsheetApp.getActive();
+var sheetName = '候補曲';
+
 function onOpen() {
   var menu = [
     {name: 'Youtube動画取得（候補曲シート用）', functionName: 'getYoutubeVideo'}
   ];
-  SpreadsheetApp.getActiveSpreadsheet().addMenu('Custom functions', menu);
+  spreadsheet.addMenu('Custom functions', menu);
 }
 
 function getYoutubeVideo() {
-  const firstRow = 2;
-  const songCol = 1;
-  const musicalCol = 2;
-  const youtubeCol = 3;
-  var sheet = SpreadsheetApp.getActive().getSheetByName('候補曲');
+  var firstRow = 2;
+  var songCol = 1;
+  var musicalCol = 2;
+  var youtubeCol = 7;
+  var sheet = spreadsheet.getSheetByName(sheetName);
   var lastRow = sheet.getLastRow();
   for (var row = firstRow; row <= lastRow; row++) {
     var songTitle = urlEncode(sheet.getRange(row, songCol, 1, 1).getValue());
@@ -40,7 +43,7 @@ function showDialog(response, query, row, col) {
 }
 
 function setYoutubeLink(videoUrl, row, column) {
-  SpreadsheetApp.getActive().getSheetByName('候補曲').getRange(row, column).setValue(videoUrl);
+  spreadsheet.getSheetByName(sheetName).getRange(row, column).setValue(videoUrl);
   var ui = SpreadsheetApp.getUi();
   var response = ui.alert('次の曲のYoutube動画を検索しますか？', ui.ButtonSet.YES_NO);
   if (response == ui.Button.YES) {
