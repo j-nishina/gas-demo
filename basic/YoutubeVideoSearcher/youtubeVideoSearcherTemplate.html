@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <style>
+    body {
+      font-size: 12px;
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+    p {
+      margin: 0;
+    }
+    #directInput {
+      display: none;
+      margin-top: 5px;
+      text-align: center;
+    }
+    #directInputLink {
+      width: 220px;
+    }
+    .urlText {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .youtubeSearch {
+      margin-top: 10px;
+      font-size: 10px;
+      text-align: right;
+    }
+    .btnList {
+      padding: 0;
+      text-align: center;
+    }
+    .btnList li {
+      display: inline-block;
+    }
+  </style>
+  <body onload="setValues(0);">
+    <input id="tableRow" type="hidden" value="<?= row ?>">
+    <input id="tableCol" type="hidden" value="<?= col ?>">
+    <ul class="btnList">
+      <li><input id="prevButton" data-index="" type="button" value="＜＜" onclick="resetValues(this);"></li>
+      <li><input id="setButton" type="button" value="この動画を使用" data-url="" onclick="setYoutubeLink(this);"></li>
+      <li><input id="nextButton" data-index="" type="button" value="＞＞" onclick="resetValues(this);"></li>
+    </ul>
+    <p><img id="thumbnail" src=""></p>
+    <p class="urlText"><span id="counter"></span>/5: <a id="videoUrl" href=""></a></p>
+    <footer>
+      <p class="youtubeSearch">動画が見つからない場合は、<a href="https://www.youtube.com/results?search_query=<?= query ?>" target="_blank" onclick="showDirectInput();">Youtubeで検索</a></p>
+      <div id="directInput">
+        <input id="directInputLink" type="input" placeholder="URLを入力してください">
+        <input id="directInputButton" type="button" value="この動画を使用" onclick="setYoutubeLinkDirectInput();">
+      </div>
+    </footer>
+  </body>
+  <script>
+    var response = <?= response ?>;
+    var row = document.getElementById('tableRow').value;
+    var col = document.getElementById('tableCol').value;
+    
+    function setValues(index) {
+      var json = JSON.parse(response);
+      var item = json.items[index];
+      
+      var url = 'http://youtu.be/' + item.id.videoId;
+      var title = item.snippet.title;
+      var thumbnailUrl = item.snippet.thumbnails.medium.url;
+      
+      var videoUrl = document.getElementById('videoUrl');
+      var preview = document.getElementById('thumbnail');
+      var setButton = document.getElementById('setButton');
+      var prevButton = document.getElementById('prevButton');
+      var nextButton = document.getElementById('nextButton');
+      var counter = document.getElementById('counter');
+      
+      videoUrl.href = url;
+      videoUrl.innerHTML = title;
+      preview.src = thumbnailUrl;
+      setButton.dataset.url = url;
+      counter.innerHTML = Number.parseInt(index) + 1;
+      
+      if (index > 0) {
+        prevButton.dataset.index = Number.parseInt(index) - 1;
+      } else {
+        prevButton.dataset.index = 4;
+      }
+      if (index < 4) {
+        nextButton.dataset.index = Number.parseInt(index) + 1;
+      } else {
+        nextButton.dataset.index = 0;
+      }
+    }
+    
+    function setYoutubeLink(button) {
+      var videoUrl = button.dataset.url;
+      google.script.run.withSuccessHandler(closeWindow).setYoutubeLink(videoUrl, row, col);
+    }
+    
+    function setYoutubeLinkDirectInput() {
+      var videoUrl = document.getElementById('directInputLink').value;
+      if (videoUrl == '') {
+        alert('URLを入力してください。');
+        return;
+      }
+      google.script.run.withSuccessHandler(closeWindow).setYoutubeLink(videoUrl, row, col);
+    }
+    
+    function resetValues(button) {
+      setValues(button.dataset.index);
+    }
+    
+    function showDirectInput() {
+      document.getElementById('directInput').style.display = 'block';
+    }
+    
+    function closeWindow() {
+      google.script.host.close();
+    }
+  </script>
+</html>
