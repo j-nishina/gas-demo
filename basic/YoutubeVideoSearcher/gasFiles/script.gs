@@ -3,7 +3,7 @@ var sheetName = '候補曲';
 
 function onOpen() {
   var menu = [
-    {name: 'Youtube動画取得（候補曲シート用）', functionName: 'getYoutubeVideo'}
+    { name: 'Youtube動画取得（候補曲シート用）', functionName: 'getYoutubeVideo' }
   ];
   spreadsheet.addMenu('Custom functions', menu);
 }

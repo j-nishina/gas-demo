@@ -17,5 +17,17 @@ GUIを作成するクラス
 
 ## デモ
 ### Spreadsheetを操作
+- onOpenでメニューを追加
+```javascript
+var spreadsheet = SpreadsheetApp.getActive(); 
+
+function onOpen() {
+  var menu = [
+    { name: 'Test', functionName: 'test' }
+  ];
+  spreadsheet.addMenu('Custom functions', menu);
+}
+```
+
 ### Youtube APIで動画の情報を取得
 ### GUIで使いやすくする
