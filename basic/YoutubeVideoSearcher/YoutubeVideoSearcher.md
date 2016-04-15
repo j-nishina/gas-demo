@@ -8,8 +8,7 @@
 
 ## 使ったGASクラス
 - SpreadsheetApp
-- YouTube API
-※UrlFetchAppでも可
+- YouTube API（UrlFetchAppでも可）
 - HtmlService
 
 ## デモ
@@ -47,18 +46,18 @@ function test() {
 
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console_4.png)
 
-- YouTube.Search.listで動画検索（https://developers.google.com/youtube/v3/docs/search/list）
+- YouTube APIで動画検索（https://developers.google.com/youtube/v3/docs/search/list）
 ```javascript
 var parameters = {
   q: 'test',
   type: 'video',
   key: apiKey
 }
-var results = YouTube.Search.list('snippet', parameters);
-```
 
-※ UrlFetchAppを使う場合
-```javascript
+// YouTube.Search.listを使う場合
+var results = YouTube.Search.list('snippet', parameters);
+// UrlFetchAppを使う場合
 var results = UrlFetchApp.fetch('https://www.googleapis.com/youtube/v3/search?part=snippet&q=test&type=video&key=' + apiKey).getContentText();
+```
 
 ### GUIで使いやすくする
