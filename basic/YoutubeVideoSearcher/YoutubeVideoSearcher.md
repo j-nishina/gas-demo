@@ -1,9 +1,9 @@
 # Youtube Video Searcher
 
-## 背景
-ミュージカル曲のコピーバンドのセットリスト管理シート
+## ミュージカル曲のコピーバンドのセットリスト管理シート
 
 こんな感じ：
+
 ![setlist screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/setlist.png)
 
 ## 使ったGASクラス
