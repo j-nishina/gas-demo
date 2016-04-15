@@ -33,12 +33,11 @@ function test() {
 ```
 
 ### YouTube APIで動画の情報を取得
-- YouTube APIを有効にする
-  - Google Apps Scriptのリソースを追加
+- YouTube APIを有効にする: Google Apps Scriptのリソースを追加
 
 ![google extensions screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_extensions.png)
 
-  - Google デベロッパー コンソールを設定
+- YouTube APIを有効にする: Google デベロッパー コンソールを設定
 
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console.png)
 
