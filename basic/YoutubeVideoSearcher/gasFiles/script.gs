@@ -24,7 +24,7 @@ function getYoutubeVideo() {
       var parameters = {
         q: songTitle + '+' + musicalTitle,
         type: 'video',
-        key: 'AIzaSyAY2hUbL_tdNmqcI4i4qYd7aIR4n5M9dm4'
+        key: apiKey
       };
       var results = YouTube.Search.list('snippet', parameters);
       showDialog(results, songTitle + '+' + musicalTitle, youtubeCell.getRow(), youtubeCell.getColumn());
