@@ -37,6 +37,7 @@ function test() {
     - Google Apps Scriptのリソースを追加
 
 ![google extensions screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_extensions.png)
+
     - Google デベロッパー コンソールを設定
 
 ![google developer console screenshot](https://github.com/j-nishina/gas-demo/blob/master/basic/YoutubeVideoSearcher/images/google_developer_console.png)
