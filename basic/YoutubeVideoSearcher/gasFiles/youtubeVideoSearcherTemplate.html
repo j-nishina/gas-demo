@@ -57,12 +57,12 @@
     </footer>
   </body>
   <script>
-    var response = <?= response ?>;
+    var results = <?= results ?>;
     var row = document.getElementById('tableRow').value;
     var col = document.getElementById('tableCol').value;
     
     function setValues(index) {
-      var json = JSON.parse(response);
+      var json = JSON.parse(results);
       var item = json.items[index];
       
       var url = 'https://youtu.be/' + item.id.videoId;

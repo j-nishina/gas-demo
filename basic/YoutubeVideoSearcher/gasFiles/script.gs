@@ -21,17 +21,21 @@ function getYoutubeVideo() {
     var youtubeCell = sheet.getRange(row, youtubeCol, 1, 1);
     var youtubeLink = youtubeCell.getValue();
     if (songTitle !== '' && youtubeLink === '') {
-      var apiUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + songTitle + '+' + musicalTitle + '&type=video&key=AIzaSyAY2hUbL_tdNmqcI4i4qYd7aIR4n5M9dm4';
-      var response = UrlFetchApp.fetch(apiUrl).getContentText();
-      showDialog(response, songTitle + '+' + musicalTitle, youtubeCell.getRow(), youtubeCell.getColumn());
+      var parameters = {
+        q: songTitle + '+' + musicalTitle,
+        type: 'video',
+        key: 'AIzaSyAY2hUbL_tdNmqcI4i4qYd7aIR4n5M9dm4'
+      };
+      var results = YouTube.Search.list('snippet', parameters);
+      showDialog(results, songTitle + '+' + musicalTitle, youtubeCell.getRow(), youtubeCell.getColumn());
       break;
     }
   }
 }
 
-function showDialog(response, query, row, col) {
+function showDialog(results, query, row, col) {
   var template = HtmlService.createTemplateFromFile('selectYoutubeLinkTemplate.html');
-  template.response = response;
+  template.results = results;
   template.query = query;
   template.row = row;
   template.col = col;
