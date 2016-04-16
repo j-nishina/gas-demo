@@ -82,7 +82,7 @@ var results = UrlFetchApp.fetch('https://www.googleapis.com/youtube/v3/search?pa
    "snippet": {
     "publishedAt": "2016-04-14T15:00:02.000Z",
     "channelId": "UCp68_FLety0O-n9Qu6phsgw",
-    "title": "Lets make a Flying Machine-Thrust Test", // ← これ
+    "title": "Lets make a Flying Machine-Thrust Test",
     "description": "The 2nd stage of the Furze Ford Unlearn Flying Machine project....So will these paramotors actually lift me off the ground, time to test how much weight they can ...",
     "thumbnails": {
      "default": {
@@ -91,7 +91,7 @@ var results = UrlFetchApp.fetch('https://www.googleapis.com/youtube/v3/search?pa
       "height": 90
      },
      "medium": {
-      "url": "https://i.ytimg.com/vi/iFtmrUscNqA/mqdefault.jpg", // ← これ
+      "url": "https://i.ytimg.com/vi/iFtmrUscNqA/mqdefault.jpg",
       "width": 320,
       "height": 180
      },
@@ -111,4 +111,18 @@ var results = UrlFetchApp.fetch('https://www.googleapis.com/youtube/v3/search?pa
 ```
 
 ### GUIで使いやすくする
+gsファイル
+```javascript
+var template = HtmlService.createHtmlTemplateFromFile('test.html');
+template.param = 'test';
+var html = template.evaluate();
 
+SpreadsheetApp.getUi().showModalDialog(html, 'Test Title');
+```
+
+HTMLファイル
+```html
+<body>
+  <?= param ?>
+</body>
+```
