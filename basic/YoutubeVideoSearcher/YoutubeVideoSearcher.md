@@ -123,6 +123,6 @@ SpreadsheetApp.getUi().showModalDialog(html, 'Test Title');
 HTMLファイル
 ```html
 <body>
-  <?= param ?>
+  <input type="button" value="<?= param ?>" onclick="google.script.run.withSuccessHandler(google.script.host.close).test();">
 </body>
 ```
