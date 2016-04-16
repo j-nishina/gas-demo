@@ -38,7 +38,7 @@
       display: inline-block;
     }
   </style>
-  <body onload="setValues(0);">
+  <body>
     <input id="tableRow" type="hidden" value="<?= row ?>">
     <input id="tableCol" type="hidden" value="<?= col ?>">
     <ul class="btnList">
@@ -119,5 +119,7 @@
     function closeWindow() {
       google.script.host.close();
     }
+
+    document.body.onload = setValues(0);
   </script>
 </html>
