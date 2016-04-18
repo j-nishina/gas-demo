@@ -6,4 +6,4 @@ GAS勉強会用デモ
 ## basic
 
 ## advanced
-[YoutubeVideoSearcher](/basic/YoutubeVideoSearcher/YoutubeVideoSearcher.md)
+[YoutubeVideoSearcher](/advanced/YoutubeVideoSearcher/YoutubeVideoSearcher.md)
