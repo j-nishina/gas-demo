@@ -2,8 +2,8 @@
 GAS勉強会用デモ
 
 ## about
+[YoutubeVideoSearcher](/basic/YoutubeVideoSearcher/YoutubeVideoSearcher.md)
 
 ## basic
-[YoutubeVideoSearcher](/basic/YoutubeVideoSearcher/YoutubeVideoSearcher.md)
 
 ## advanced
