@@ -113,7 +113,7 @@ var results = UrlFetchApp.fetch('https://www.googleapis.com/youtube/v3/search?pa
 ### GUIで使いやすくする
 gsファイル
 ```javascript
-var template = HtmlService.createHtmlTemplateFromFile('test.html');
+var template = HtmlService.createTemplateFromFile('test.html');
 template.param = 'test';
 var html = template.evaluate();
 
